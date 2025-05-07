@@ -2,6 +2,10 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 
+const connectDB = require("./database/conection");
+
+connectDB();
+
 app.use("/", router);
 
 router.get("/", (req, res) => {
