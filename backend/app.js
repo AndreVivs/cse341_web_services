@@ -1,64 +1,30 @@
 const express = require("express");
+const mongodb = require("./db/connect");
+const professionalRoutes = require("./routes/professional");
+
+const port = process.env.PORT || 8080;
 const app = express();
-const router = express.Router();
 
-const connectDB = require("./database/conection");
+app
+  .use(express.json())
+  .use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    next();
+  })
+  .use("/professional", professionalRoutes);
 
-connectDB();
-
-app.use("/", router);
-
-router.get("/", (req, res) => {
-  res.send("Hello World, This is the root route");
+// Agregar una ruta raíz para probar el servidor
+app.get("/", (req, res) => {
+  res.send("Server is running!");
 });
 
-router.get("/home", (req, res) => {
-  res.send("Hello World, This is home router");
+mongodb.initDb((err, mongodb) => {
+  if (err) {
+    console.log(err);
+  } else {
+    app.listen(port);
+    console.log(`Connected to DB and listening on ${port}`);
+  }
 });
-
-router.get("/profile", (req, res) => {
-  res.send("Hello World, This is profile router");
-});
-
-router.get("/login", (req, res) => {
-  res.send("Hello World, This is login router");
-});
-
-router.get("/logout", (req, res) => {
-  res.send("Hello World, This is logout router");
-});
-
-app.use((req, res, next) => {
-  console.log("Time:", Date.now());
-  next();
-});
-
-app.listen(process.env.PORT || 3000, () => {
-  console.log("Web Server is listening at port " + (process.env.PORT || 3000));
-});
-
-// In a similar way to application middleware, we can use router middleware.
-
-// const express = require('express');
-// const app = express();
-// const router = express.Router();
-
-// router.use((req, res, next) => {
-//   console.log('Time:', Date.now());
-//   next();
-// });
-
-// router.get('/home', (req, res) => {
-//   res.send("ok");
-// });
-
-// app.use('/', router);
-
-// app.listen(process.env.PORT || 3000, () => {
-//   console.log('Web Server is listening at port ' + (process.env.PORT || 3000));
-// });
-
-// catch errors
-// app.use((err, req, res, next) => {
-//   res.status(500).send("Something broke!");
-// });
