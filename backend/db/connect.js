@@ -9,14 +9,14 @@ const initDb = (callback) => {
     console.log("Db is already initialized!");
     return callback(null, _db);
   }
-
-  MongoClient.connect(process.env.MONGODB_URI, {})
+  MongoClient.connect(process.env.MONGODB_URI)
     .then((client) => {
-      _db = client.db(); // <- aquí guardas directamente la DB
-      console.log("Successfully connected to MongoDB.");
+      console.log("Connected to MongoDB!");
+      _db = client;
       callback(null, _db);
     })
     .catch((err) => {
+      console.error("Failed to connect to MongoDB", err);
       callback(err);
     });
 };
