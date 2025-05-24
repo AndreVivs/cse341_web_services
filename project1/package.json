@@ -1,0 +1,19 @@
+{
+  "name": "project1",
+  "version": "1.0.0",
+  "description": "This project will store Contacts (such as friends or work colleagues)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreVivs/cse341_web_services.git"
+  },
+  "author": "Andrea Ramos Vivas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreVivs/cse341_web_services/issues"
+  },
+  "homepage": "https://github.com/AndreVivs/cse341_web_services#readme"
+}
