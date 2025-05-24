@@ -4,7 +4,8 @@
   "description": "This project will store Contacts (such as friends or work colleagues)",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/AndreVivs/cse341_web_services/issues"
   },
-  "homepage": "https://github.com/AndreVivs/cse341_web_services#readme"
+  "homepage": "https://github.com/AndreVivs/cse341_web_services#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
