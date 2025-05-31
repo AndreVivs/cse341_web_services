@@ -1,0 +1,36 @@
+//LOCALHOST
+### Read/GET all users
+GET http://localhost:3000/users
+### Read/GET a user by ID
+GET http://localhost:3000/users/683b610f4c76669184e0f6cf
+
+
+### Create/POST a new user
+POST http://localhost:3000/users HTTP/1.1
+Content-Type: application/json
+
+{
+"firstName": "John",
+"lastName": "Doe",
+"email": "jdoe@test.com",
+"favoriteColor": "blue",
+"birthdate": "1990-01-01T00:00:00.000Z"
+}
+
+
+### Update/PUT a user by ID
+PUT http://localhost:3000/users/683b610f4c76669184e0f6cf HTTP/1.1
+Content-Type: application/json
+
+{
+"firstName": "Joohn",
+"lastName": "Doee",
+"email": "change@test.com",
+"favoriteColor": "blue",
+"birthdate": "1990-01-01"
+}
+
+
+### Delete/DELETE a user by ID
+DELETE http://localhost:3000/users/683b61994c76669184e0f6d1
+
