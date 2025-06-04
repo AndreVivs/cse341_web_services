@@ -5,7 +5,7 @@
     "description": "This API provide the information about the products in the store and their details.",
     "version": "1.0.0"
   },
-  "host": "https://project2-sy4v.onrender.com",
+  "host": "project2-sy4v.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
