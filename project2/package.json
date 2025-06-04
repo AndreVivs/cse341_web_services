@@ -1,7 +1,7 @@
 {
-  "name": "project1",
+  "name": "project2-crud-operations",
   "version": "1.0.0",
-  "description": "This project will store Contacts (such as friends or work colleagues)",
+  "description": "experience performing CRUD operations",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -24,7 +24,7 @@
     "mongodb": "^6.16.0",
     "swagger-autogen": "^2.23.7",
     "swagger-ui-express": "^5.0.1",
-    "validator": "^13.15.15",
+    "validate.js": "^0.13.1",
     "validatorjs": "^3.22.1"
   }
 }

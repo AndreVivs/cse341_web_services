@@ -11,7 +11,7 @@
     "https"
   ],
   "paths": {
-    "/": {
+    "/api-docs": {
       "get": {
         "tags": ["Hello Project1"],
         "description": "Root endpoint. Can be used to verify that the API is running.",
