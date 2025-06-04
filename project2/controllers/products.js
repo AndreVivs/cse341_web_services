@@ -19,7 +19,6 @@ getAllProducts = async (req, res) => {
 getByCategory = async (req, res) => {
   // #swagger.tags = ['Products']
   // #swagger.description = 'Get all products by category name'
-  // #swagger.parameters['category'] = { in: 'path', description: 'Category name', required: true, type: 'string' }
   const { category } = req.params;
 
   try {
@@ -47,7 +46,6 @@ getByCategory = async (req, res) => {
 getProductById = async (req, res) => {
   // #swagger.tags = ['Products']
   // #swagger.description = 'Get product by ID'
-  // #swagger.parameters['id'] = { in: 'path', description: 'product ID', required: true, type: 'string' }
   const { id } = req.params;
 
   if (!ObjectId.isValid(id)) {
@@ -75,7 +73,6 @@ getProductById = async (req, res) => {
 createProduct = async (req, res) => {
   // #swagger.tags = ['Products']
   // #swagger.description = 'Create a new product'
-  // #swagger.parameters['body'] = { in: 'body', description: 'Product information', required: true, schema: { $ref: '#/definitions/Product' } }
   const product = {
     name: req.body.name,
     category: req.body.category,
@@ -102,8 +99,6 @@ createProduct = async (req, res) => {
 updateProduct = async (req, res) => {
   // #swagger.tags = ['Products']
   // #swagger.description = 'Update a product by ID'
-  // #swagger.parameters['id'] = { in: 'path', description: 'Product ID', required: true, type: 'string' }
-  // #swagger.parameters['body'] = { in: 'body', description: 'Updated product data', required: true, schema: { $ref: '#/definitions/Product' } }
   const { id } = req.params;
 
   if (!ObjectId.isValid(id)) {
@@ -139,7 +134,6 @@ updateProduct = async (req, res) => {
 deleteProduct = async (req, res) => {
   // #swagger.tags = ['Products']
   // #swagger.description = 'Delete a product by ID'
-  // #swagger.parameters['id'] = { in: 'path', description: 'Product ID', required: true, type: 'string' }
   const { id } = req.params;
 
   if (!ObjectId.isValid(id)) {

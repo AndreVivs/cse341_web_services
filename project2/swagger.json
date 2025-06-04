@@ -46,10 +46,18 @@
           {
             "name": "body",
             "in": "body",
-            "description": "Product information",
             "required": true,
+            "description": "Product information.",
             "schema": {
-              "$ref": "#/definitions/Product"
+              "type": "object",
+              "required": ["name", "category", "price", "stock", "description"],
+              "properties": {
+                "name": { "type": "string", "example": "Wallet" },
+                "category": { "type": "string", "example": "Accessories" },
+                "price": { "type": "string", "example": "120" },
+                "stock": { "type": "string", "example": "3" },
+                "description": { "type": "string", "example": "Elegant wallet Paco Ran designer" }
+              }
             }
           }
         ],
@@ -146,7 +154,14 @@
             "description": "Updated product data",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Product"
+              "type": "object",
+              "properties": {
+                "name": { "type": "string", "example": "Updated Wallet" },
+                "category": { "type": "string", "example": "Accessories" },
+                "price": { "type": "string", "example": "150" },
+                "stock": { "type": "string", "example": "5" },
+                "description": { "type": "string", "example": "Updated description for the wallet" }
+              }
             }
           }
         ],
@@ -214,29 +229,22 @@
         "tags": [
           "Users"
         ],
-        "description": "",
+        "description": "Creates a new user in the database.",
         "parameters": [
           {
             "name": "body",
             "in": "body",
+            "required": true,
+            "description": "User object to create.",
             "schema": {
               "type": "object",
+              "required": ["firstName", "lastName", "email", "favoriteColor", "birthdate"],
               "properties": {
-                "firstName": {
-                  "example": "any"
-                },
-                "lastName": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                },
-                "favoriteColor": {
-                  "example": "any"
-                },
-                "birthdate": {
-                  "example": "any"
-                }
+                "firstName": { "type": "string", "example": "John" },
+                "lastName": { "type": "string", "example": "Doe" },
+                "email": { "type": "string", "example": "john.doe@example.com" },
+                "favoriteColor": { "type": "string", "example": "Blue" },
+                "birthdate": { "type": "string", "example": "1990-01-01" }
               }
             }
           }
@@ -287,7 +295,7 @@
         "tags": [
           "Users"
         ],
-        "description": "",
+        "description": "Update user by ID",
         "parameters": [
           {
             "name": "id",
@@ -302,19 +310,19 @@
               "type": "object",
               "properties": {
                 "firstName": {
-                  "example": "any"
+                  "example": "John"
                 },
                 "lastName": {
-                  "example": "any"
+                  "example": "Doe"
                 },
                 "email": {
-                  "example": "any"
+                  "example": "john.doe@example.com"
                 },
                 "favoriteColor": {
-                  "example": "any"
+                  "example": "Blue"
                 },
                 "birthdate": {
-                  "example": "any"
+                  "example": "1990-01-01"
                 }
               }
             }
