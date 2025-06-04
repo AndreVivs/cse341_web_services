@@ -5,29 +5,19 @@
     "description": "This API provide the information about the products in the store and their details.",
     "version": "1.0.0"
   },
-  "host": "localhost:3001",
+  "host": "https://project2-sy4v.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
     "/": {
       "get": {
-        "description": "",
+        "tags": ["Hello Project2"],
+        "description": "Root endpoint. Can be used to verify that the API is running.",
         "responses": {
           "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
+            "description": "API is working"
           }
         }
       }
