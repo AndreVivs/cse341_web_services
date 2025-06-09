@@ -6,7 +6,7 @@ async function apiFetch(url) {
 }
 
 const getData = async () => {
-  const data = await apiFetch('http://localhost:8080/professional');
+  const data = await apiFetch("http://localhost:8080/professional");
   displayAllData(data);
 };
 
@@ -21,42 +21,46 @@ function displayAllData(data) {
 }
 
 function displayProfessionalName(n) {
-  let professionalName = document.getElementById('professionalName');
+  let professionalName = document.getElementById("professionalName");
   professionalName.innerHTML = n;
 }
 
 function displayImage(img) {
-  let image = document.getElementById('professionalImage');
-  image.src = `data:image/png;base64, ${img}`;
+  let image = document.getElementById("professionalImage");
+  if (img.startsWith("data:image")) {
+    image.src = img;
+  } else {
+    image.src = `data:image/png;base64,${img}`;
+  }
 }
 function displayPrimaryDescription(data) {
-  let nameLink = document.getElementById('nameLink');
+  let nameLink = document.getElementById("nameLink");
   nameLink.innerHTML = data.nameLink.firstName;
   nameLink.href = data.nameLink.url;
-  let primaryDescription = document.getElementById('primaryDescription');
+  let primaryDescription = document.getElementById("primaryDescription");
   primaryDescription.innerHTML = data.primaryDescription;
 }
 
 function displayWorkDescription(data) {
-  let workDescription1 = document.getElementById('workDescription1');
+  let workDescription1 = document.getElementById("workDescription1");
   workDescription1.innerHTML = data.workDescription1;
-  let workDescription2 = document.getElementById('workDescription2');
+  let workDescription2 = document.getElementById("workDescription2");
   workDescription2.innerHTML = data.workDescription2;
 }
 
 function displayLinkTitleText(data) {
-  let linkTitle = document.getElementById('linkTitleText');
+  let linkTitle = document.getElementById("linkTitleText");
   linkTitle.innerHTML = data.linkTitleText;
 }
 
 function displayLinkedInLink(data) {
-  let linkedInLink = document.getElementById('linkedInLink');
+  let linkedInLink = document.getElementById("linkedInLink");
   linkedInLink.innerHTML = data.linkedInLink.text;
   linkedInLink.href = data.linkedInLink.link;
 }
 
 function displayGitHubLink(data) {
-  let githubLink = document.getElementById('githubLink');
+  let githubLink = document.getElementById("githubLink");
   githubLink.innerHTML = data.githubLink.text;
   githubLink.href = data.githubLink.link;
 }
