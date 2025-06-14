@@ -7,11 +7,11 @@ const { isAuthenticated } = require("../middleware/authenticate");
 
 
 router.get("/", usersController.getAllUsers);
-router.get("/id/:id", usersController.getUserById);
+router.get("/id/:id", validation.validateObjectId, validation.checkUserExists, usersController.getUserById);
 
 router.post("/", isAuthenticated, validation.saveContacts, usersController.createUser);
-router.put("/id/:id", isAuthenticated, validation.saveContacts, usersController.updateUser);
+router.put("/id/:id", isAuthenticated, validation.validateObjectId, validation.checkUserExists, validation.saveContacts, usersController.updateUser);
 
-router.delete("/:id", isAuthenticated, usersController.deleteUser);
+router.delete("/:id", isAuthenticated, validation.validateObjectId, validation.checkUserExists, usersController.deleteUser);
 
 module.exports = router;
