@@ -11,6 +11,8 @@ const dotenv = require("dotenv").config();
 require("dotenv").config();
 
 const app = express();
+app.set("trust proxy", 1);
+
 const port = process.env.PORT || 3000;
 
 const User = require("./models/users.js");
