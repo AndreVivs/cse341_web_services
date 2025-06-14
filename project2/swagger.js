@@ -6,8 +6,8 @@ const doc = {
     description:
       "This API provide the information about the products in the store and their details.",
   },
-  host: "localhost:3000",
-  schemes: ["http", "https"],
+  host: "project2-sy4v.onrender.com",
+  schemes: ["https"],
 };
 
 const outputFile = "./swagger.json";
