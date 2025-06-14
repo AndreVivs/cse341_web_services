@@ -6,7 +6,7 @@ const doc = {
     description:
       "This API provide the information about the products in the store and their details.",
   },
-  host: "localhost:3001",
+  host: "localhost:3000",
   schemes: ["http", "https"],
 };
 
