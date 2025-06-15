@@ -171,6 +171,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Products"
+        ],
         "description": "",
         "parameters": [
           {
@@ -223,6 +226,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Products"
+        ],
         "description": "",
         "parameters": [
           {
@@ -267,6 +273,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Users"
+        ],
         "description": "",
         "parameters": [
           {
@@ -340,6 +349,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Users"
+        ],
         "description": "",
         "parameters": [
           {
